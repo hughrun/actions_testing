@@ -14,6 +14,7 @@ jobs:
 
     - name: Update text and html files
       run: |
+        npm install axios
         npm install cheerio
         npm install pretty
         node ./.github/scripts/contributors.js 

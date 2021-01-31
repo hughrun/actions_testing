@@ -1,11 +1,12 @@
 const fs = require('fs')
+const axios = require('axios');
 const cheerio = require('cheerio');
 const pretty = require('pretty');
 var page = fs.readFileSync('./contributors.html', {encoding: 'utf-8' })
 var contributors = fs.readFileSync('./contributors.txt', {encoding: 'utf-8' }).split('\n')
 const $ = cheerio.load(page)
 
-fetch(process.env.GITHUB_EVENT_PATH)
+axios.get(process.env.GITHUB_EVENT_PATH)
 .then( event => {
   $('#contributors').empty() // remove all names to start clean
   for (let name of contributors) {
