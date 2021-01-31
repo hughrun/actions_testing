@@ -13,8 +13,7 @@ jobs:
 
     - name: Update text and html files
       run: |
-        node ./.github/scripts/contributors.js
-      with: ${{ github.event.commits }} 
+        node ./.github/scripts/contributors.js 
 
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
