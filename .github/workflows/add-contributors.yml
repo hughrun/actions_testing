@@ -1,0 +1,22 @@
+name: Add contributors
+
+on:
+  push:
+    branches: 
+      - "master"
+      - "main"
+
+steps:
+  update-contributors:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Update text and html files
+      run: |
+        node ./.github/scripts/contributors.js
+      env:
+        COMMITS: ${{ github.event.commits }} 
+
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: update contributors
