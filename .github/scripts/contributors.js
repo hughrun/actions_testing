@@ -2,7 +2,7 @@ const fs = require('fs')
 const axios = require('axios');
 const cheerio = require('cheerio');
 const pretty = require('pretty');
-var page = fs.readFileSync('./contributors.html', {encoding: 'utf-8' })
+var page = fs.readFileSync('./website/contributing/index.html', {encoding: 'utf-8' })
 var contributors = fs.readFileSync('./contributors.txt', {encoding: 'utf-8' }).split('\n')
 const $ = cheerio.load(page)
 
