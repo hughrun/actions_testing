@@ -10,12 +10,11 @@ jobs:
   update-contributors:
     runs-on: ubuntu-latest
     steps:
-    
+
     - name: Update text and html files
       run: |
         node ./.github/scripts/contributors.js
-      env:
-        COMMITS: ${{ github.event.commits }} 
+      with: ${{ github.event.commits }} 
 
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:

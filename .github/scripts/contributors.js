@@ -1,7 +1,7 @@
 const fs = require('fs')
 const cheerio = require('cheerio');
 const pretty = require('pretty');
-const commits = process.env.COMMITS
+const commits = github.event.commits;
 const $ = cheerio.load(page)
 var page = fs.readFileSync('./contributors.html', {encoding: 'utf-8' })
 var contributors = fs.readFileSync('./contributors.txt', {encoding: 'utf-8' }).split('\n')
