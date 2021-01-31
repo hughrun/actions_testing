@@ -7,6 +7,9 @@ var contributors = fs.readFileSync('./contributors.txt', {encoding: 'utf-8' }).s
 const $ = cheerio.load(page)
 
 console.log(process.env.GITHUB_EVENT_PATH)
+var eventJson = fs.readFileSync(process.env.GITHUB_EVENT_PATH, {encoding: 'utf-8' })
+console.log(typeof eventJson);
+console.log(eventJson);
 
 axios.get(process.env.GITHUB_EVENT_PATH)
 .then( event => {
