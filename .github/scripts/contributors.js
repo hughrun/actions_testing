@@ -1,9 +1,9 @@
 const fs = require('fs')
 const cheerio = require('cheerio');
 const pretty = require('pretty');
-const $ = cheerio.load(page)
 var page = fs.readFileSync('./contributors.html', {encoding: 'utf-8' })
 var contributors = fs.readFileSync('./contributors.txt', {encoding: 'utf-8' }).split('\n')
+const $ = cheerio.load(page)
 
 fetch(process.env.GITHUB_EVENT_PATH)
 .then( event => {
