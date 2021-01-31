@@ -1,2 +1,3 @@
 # actions_testing
-For testing Actions
+
+Throwaway repository for testing draft Actions.
