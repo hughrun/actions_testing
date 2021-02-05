@@ -11,9 +11,6 @@ jobs:
     steps:
 
     - uses: actions/checkout@v2
-      with:
-        ref: ${{ github.event.pull_request.head.sha }}  
-        fetch-depth: 0
 
     - uses: christianvuerings/add-labels@v1
       with:
@@ -22,12 +19,3 @@ jobs:
           test
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: run arbitrary script
-      run: |
-        python3 ./.github/scripts/hello.py
-
-    - uses: stefanzweifel/git-auto-commit-action@v4
-      with:
-        commit_message: update data
-        branch: ${{ github.event.pull_request.head.ref }}  
