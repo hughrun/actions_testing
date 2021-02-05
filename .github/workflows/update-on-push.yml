@@ -17,14 +17,6 @@ jobs:
         ref: ${{ github.head_ref }}
         fetch-depth: 0
 
-    - uses: christianvuerings/add-labels@v1
-      with:
-        labels: |
-          auto update
-          test
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
     - name: run arbitrary script
       run: |
         python3 ./.github/scripts/hello.py
