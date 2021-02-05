@@ -11,6 +11,8 @@ jobs:
     steps:
 
     - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.head_ref }}
 
     - uses: christianvuerings/add-labels@v1
       with:
