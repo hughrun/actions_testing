@@ -2,4 +2,4 @@
 
 Throwaway repository for testing draft Actions.
 
-yo
+It's an experiment.
